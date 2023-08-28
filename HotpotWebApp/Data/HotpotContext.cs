@@ -18,7 +18,7 @@ namespace HotpotWebApp.Data
                 di.IngredientId,
             });
             modelBuilder.Entity<DishIngredient>().HasOne(d => d.Dish).WithMany(di => di.DishIngredients).HasForeignKey(d => d.DishId);
-            modelBuilder.Entity<DishIngredient>().HasOne(i => i.Ingredient).WithMany(di => di.DishIngredients).HasForeignKey(i => i.DishId);
+            modelBuilder.Entity<DishIngredient>().HasOne(i => i.Ingredient).WithMany(di => di.DishIngredients).HasForeignKey(i => i.IngredientId);
 
             modelBuilder.Entity<Dish>().HasData(
                 new Dish
